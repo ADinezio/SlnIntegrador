@@ -18,9 +18,6 @@ namespace WindowsPresentacion
         List<Paciente> listPaciente;
         List<Medico> clinico;
         List<Habitacion> listHabitaciones;
-        AdmMedico medico;
-        AdmPaciente paciente;
-        AdmHabitacion habitacion;
         
         public Form1()
         {
@@ -29,15 +26,11 @@ namespace WindowsPresentacion
 
         private void btnCrearListas_Click(object sender, EventArgs e)
         { 
-            medico=new AdmMedico();
-            paciente=new AdmPaciente();
-            habitacion = new AdmHabitacion();
+            listMedico = AdmMedico.Listar();
+            listPaciente = AdmPaciente.Listar();
+            listHabitaciones = AdmHabitacion.Listar();
 
-            listMedico = medico.Listar();
-            listPaciente = paciente.Listar();
-            listHabitaciones = habitacion.Listar();
-
-            clinico= medico.Listar("Clinico");
+            clinico= AdmMedico.Listar("Clinico");
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)

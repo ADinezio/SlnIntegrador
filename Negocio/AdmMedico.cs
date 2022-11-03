@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class AdmMedico
+    public static class AdmMedico
     {
-        List<Medico> medicos;
-        public  List<Medico> Listar()
+        static List<Medico> medicos;
+        public static List<Medico> Listar()
         {
             medicos = new List<Medico>();
             medicos.Add(new Medico("Clinico","11AA332",12,"Carlos","Palazo","La Pamapa 2234","2235662534","carlitosCapo@gmai.com"));
@@ -23,7 +23,7 @@ namespace Negocio
             return medicos;
         }
 
-        public List<Medico> Listar(string especialidad)
+        public static List<Medico> Listar(string especialidad)
         {
             List<Medico> medicoEspecialidad = new List<Medico>();
 
@@ -37,12 +37,12 @@ namespace Negocio
             return medicoEspecialidad;
         }
 
-        public int Insertar(Medico medico)
+        public static int Insertar(Medico medico)
         {
             return 0;
         }
 
-        public bool Eliminar(int id)    // Esta funcion en realidad retorna int
+        public static bool Eliminar(int id)    // Esta funcion en realidad retorna int
         {
             bool flag = false;
 
@@ -56,7 +56,7 @@ namespace Negocio
 
             return flag;
         }
-        public Medico TraerUno(int id)
+        public static Medico TraerUno(int id)
         {
             Medico medicoId = null;
 

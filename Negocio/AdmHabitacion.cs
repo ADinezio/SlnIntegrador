@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class AdmHabitacion
+    public static class AdmHabitacion
     {
-        List<Habitacion> habitaciones;
+        static List<Habitacion> habitaciones;
 
-        public List<Habitacion> Listar()
+        public static List<Habitacion> Listar()
         {
             habitaciones = new List<Habitacion>();
             habitaciones.Add(new Habitacion(1,223,true));
@@ -23,7 +23,7 @@ namespace Negocio
             return habitaciones;
         }
 
-        public List<Habitacion> Listar(bool estado)
+        public static List<Habitacion> Listar(bool estado)
         {
             List<Habitacion> habEstado = new List<Habitacion>();
             foreach(var habitacion in habitaciones)
@@ -36,13 +36,13 @@ namespace Negocio
             return habEstado;
         }
 
-        public int Insertar(Habitacion habitacion)
+        public static int Insertar(Habitacion habitacion)
         {
 
             return 0;
         }
 
-        public bool Eliminar(int id)        //El tipo de retorno en realidad es int
+        public static bool Eliminar(int id)        //El tipo de retorno en realidad es int
         {
             bool flag=false;
             foreach(var item in habitaciones)
@@ -55,7 +55,7 @@ namespace Negocio
             }
             return flag;
         }
-        public Habitacion TraerUno(int numero)
+        public static Habitacion TraerUno(int numero)
         {
             Habitacion habitacion=null;
             foreach(var item in habitaciones)

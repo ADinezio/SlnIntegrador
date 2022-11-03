@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class AdmPaciente
+    public static class AdmPaciente
     {
-        List<Paciente> pacientes;
+        static List<Paciente> pacientes;
 
-        public List<Paciente> Listar()
+        public static List<Paciente> Listar()
         {
             pacientes = new List<Paciente>();
             Paciente paciente1 = new Paciente("66258221",120,"Juan","Carlos","Sarmiento 1325","4786599","juancito@gmail.com");
@@ -24,12 +24,12 @@ namespace Negocio
         }
 
 
-        public int Insertar(Paciente paciente)
+        public static int Insertar(Paciente paciente)
         {
             return 0;
         }
 
-        public bool Eliminar(int id)           // En realidad la funcion retorna un int
+        public static bool Eliminar(int id)           // En realidad la funcion retorna un int
         {
             bool flag = false;
             foreach (var item in pacientes)
@@ -41,7 +41,7 @@ namespace Negocio
             }
             return flag;
         }
-        public Paciente TraerUno(string nroHistoriaClinica)
+        public static Paciente TraerUno(string nroHistoriaClinica)
         {
             Paciente pacienteBuscado = null;
 
